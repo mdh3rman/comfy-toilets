@@ -1,15 +1,17 @@
 <h1>Where to find them</h1>
 <% @toilets.each do |toilet| %>
-	<article class="post">
-		<div class="post-preview col-10 no-gutter">
-			<h2>
+	<div class="paper">
+
+			<h1>
 				<%= link_to(toilet_path(toilet)) do %>
 					<%= toilet.title %>
 				<% end %>
-			</h2>
+			</h1>
+    <hr/>
 			<p>
 				<%= toilet.description %>
 			</p>
-		</div>
-	</article>
+    <%= link_to('Show', toilet_path(toilet), class: 'btn')  %>
+    <div class="space"></div>
+	</div>
 <% end %>
