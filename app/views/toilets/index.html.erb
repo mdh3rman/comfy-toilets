@@ -1,0 +1,30 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col justify-content-center">
+			<div id="sidemenu">
+				<ul>
+					<%= link_to_in_li "Home", toilets_path %>
+					<%= link_to_in_li "Create New", new_toilet_path %>
+				</ul>	
+			</div>
+		</div>
+		<div class="col-8">
+			<h1>Where to find them</h1>
+			<% @toilets.each do |toilet| %>
+				<article class="post">
+					<div class="post-preview col-10 no-gutter">
+						<h2>
+							<%= link_to(toilet_path(toilet)) do %>
+								<%= toilet.title %>
+							<% end %>
+						</h2>
+						<p>
+							<%= toilet.description %>
+						</p>
+					</div>
+				</article>
+			<% end %>
+		</div>
+	</div>
+	
+</div>
